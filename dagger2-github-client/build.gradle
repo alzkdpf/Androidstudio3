@@ -1,0 +1,25 @@
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0-alpha13'
+        classpath 'com.frogermcs.androiddevmetrics:androiddevmetrics-plugin:0.6'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+        google()
+        mavenCentral()
+        maven {
+            url "https://maven.google.com"
+        }
+    }
+
+    project.ext {
+        myCompileSdkVersion="27.1.1" //String
+    }
+}
