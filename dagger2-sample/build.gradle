@@ -1,27 +1,24 @@
 buildscript {
-  repositories {
-    jcenter()
-    maven {
-      url 'https://maven.google.com/'
-      name 'Google'
+    ext.kotlin_version = '1.2.40'
+    repositories {
+        maven { url 'https://maven.google.com' }
+        jcenter()
+        google()
     }
-    google()
-  }
-  dependencies {
-    classpath 'com.android.tools.build:gradle:3.2.0-alpha13'
-    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-  }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.0-alpha13'
+        classpath 'com.vanniktech:gradle-android-junit-jacoco-plugin:0.11.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
 }
 
 allprojects {
-  repositories {
-    mavenCentral()
-    maven {
-      url 'https://oss.sonatype.org/content/repositories/snapshots/'
+    repositories {
+        jcenter()
+        google()
     }
-    maven {
-      url 'https://maven.google.com/'
-      name 'Google'
-    }
-  }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }

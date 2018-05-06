@@ -1,0 +1,17 @@
+general:
+    artifacts:
+        - /home/ubuntu/Dagger2Demo/app/build/outputs/apk/
+
+machine:
+    environment:
+        ANDROID_HOME: /usr/local/android-sdk-linux
+
+dependencies:
+    pre:
+        - echo y | android update sdk --no-ui --all --filter tools,platform-tools,android-27,extra-google-m2repository,extra-android-support
+        - echo y | android update sdk --no-ui --all --filter build-tools-27.0.3
+test:
+    override:
+        - (./gradlew build jacocoTestReportDebug assembleAndroidTest lint):
+            timeout: 520
+        - cp -r app/build/reports $CIRCLE_ARTIFACTS
