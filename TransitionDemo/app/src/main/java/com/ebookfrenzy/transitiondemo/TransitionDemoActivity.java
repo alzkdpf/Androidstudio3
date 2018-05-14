@@ -39,7 +39,8 @@ public class TransitionDemoActivity extends AppCompatActivity {
         changeBounds.setDuration(3000);
         changeBounds.setInterpolator(new BounceInterpolator());
 
-        TransitionManager.beginDelayedTransition(myLayout, changeBounds);
+        // 애니메이션 지정
+//        TransitionManager.beginDelayedTransition(myLayout, changeBounds);
 
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
