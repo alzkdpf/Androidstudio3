@@ -12,7 +12,7 @@
         <activity
             android:name=".FabExampleActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/TestThme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
